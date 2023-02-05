@@ -1,18 +1,39 @@
 import { createRoot } from "react-dom/client";
-import * as React from "react";
-// import styles from "./styles.css";
+import React, { useRef } from "react";
+import { RenderMonitors } from "./components/monitorDisplay";
 
 const render = () => {
     const root = createRoot(document.getElementById("root"));
-    root.render(<HelloMessage />);
+    root.render(<App />);
 };
 
-const HelloMessage = (): React.ReactElement => {
+const App = (): React.ReactElement => {
+    const monitorInformation: MonitorInformation[] = [
+        {
+            id: "1",
+            name: "Monitor 1",
+            dpi: 96,
+            resolution: {
+                width: 1920,
+                height: 1080,
+            },
+        },
+        {
+            id: "2",
+            name: "Monitor 2",
+            dpi: 96,
+            resolution: {
+                width: 1920,
+                height: 1080,
+            },
+            rotation: 90,
+        },
+    ];
+
     return (
-        <>
-            <h1 className="text-3xl font-bold">💖 Hello World!</h1>
-            <p className="text-sm">Welcome to your Electron application.</p>
-        </>
+        <div className="w-full h-full">
+            <RenderMonitors monitorInformation={monitorInformation} />
+        </div>
     );
 };
 

@@ -10,7 +10,8 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "eslint --ext .ts,.tsx ."
+    "lint": "eslint --ext .ts,.tsx .",
+    "tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./src/styles.css"
   },
   "keywords": [],
   "author": {
